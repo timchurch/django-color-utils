@@ -1,0 +1,13 @@
+<img id="{{ name }}-mooRainbow" src="{{ STATIC_URL }}color_utils/moorainbow/images/rainbow.png" alt="[r]" width="16" height="16" />
+{{ rendered_input }}
+<script type="text/javascript">
+	window.addEvent('domready', function() {
+		var r = new MooRainbow('{{ name }}-mooRainbow', {
+			'startColor': [{{ rgb.0 }}, {{ rgb.1 }}, {{ rgb.2 }}],
+			'imgPath': '{{ STATIC_URL }}color_utils/moorainbow/images/',
+			'onChange': function(color) {
+				$('{{ attrs.id }}').value = color.hex;
+			}
+		});
+	});
+</script>

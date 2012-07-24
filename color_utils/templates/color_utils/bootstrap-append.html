@@ -1,0 +1,19 @@
+<div id="{{ attrs.id }}-container" class="input-append color" data-color="{{ value }}">
+	{{ rendered_input }}<span class="add-on"><i style="background-color:{{ value }}"></i></span>
+</div>
+<script type="text/javascript">
+	$(document).ready(function(){
+	    $('#{{ attrs.id }}-container').colorpicker({
+	        format: 'hex'
+	    });
+	    /*
+	    $('#{{ attrs.id }}').change(function(){
+	    	var value = $(this).attr('value');
+	    	$('#{{ attrs.id }}-container').attr('data-color', value);
+	    	$(this).next('.add-on').find('i').first().css('background-color', value);
+	    	data = cp.data;
+	    	cp.update;
+	    });
+	    */
+	});
+</script>
