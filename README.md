@@ -35,6 +35,7 @@ Usage
 
 * 1. Add 'color_utils' to your installed apps:
 
+```python
 INSTALLED_APPS = (
   ...
 
@@ -42,6 +43,7 @@ INSTALLED_APPS = (
 
   ...
 )
+```
 
 * 2. In your forms.py file override form widgets with widgets from color_utils. For example if using model forms:
 
