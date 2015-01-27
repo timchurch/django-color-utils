@@ -29,3 +29,34 @@ Django model fields for storing color values in different formats including hex,
 
 TODO
 
+
+Usage
+======
+
+* 1. Add 'color_utils' to your installed apps:
+
+```python
+INSTALLED_APPS = (
+  ...
+
+  'color_utils',
+
+  ...
+)
+```
+
+* 2. In your forms.py file override form widgets with widgets from color_utils. For example if using model forms:
+
+```python
+from django.forms import ModelForm
+from . import models
+
+from color_utils import widgets as color_widgets
+
+class MyColorfulModelForm(ModelForm):
+    class Meta:
+        model = models.MyColorfulModel
+        widgets = {
+            'my_color_field': color_widgets.HTML5ColorInput(),
+        }
+```
